@@ -6,6 +6,10 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <script
+            src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="canvas_wrapper">
@@ -14,6 +18,11 @@
         </div>
         <canvas id="tetris" width="240" height="400"></canvas>
         <script src="main.js"></script>
+        <div class="btn_wrapper">
+            <a href="javascript:void(0)" class="btn btn_left" onclick="playerMove(-1)">left</a>
+            <a href="javascript:void(0)" class="btn btn_rotate" onclick="playerRotate(-1)">rotate</a>
+            <a href="javascript:void(0)" class="btn btn_right" onclick="playerMove(1)">right</a>
+        </div>
     </div>
 
     <style>
@@ -34,12 +43,15 @@
             height: 99vh;
         }
         canvas {
+            display: block;
+            margin: 0 auto 5px;
             height: 80vh;
+            width: 100%;
             border: 3px solid #fff;
             overflow: hidden;
         }
         .canvas_wrapper {
-            width: 440px;
+            width: 435px;
             margin: 0 auto;
             overflow: hidden;
             position: relative;
@@ -49,6 +61,25 @@
             left: 20px;
             top: 20px;
             color: #ffffff;
+        }
+        .btn_wrapper {
+            display: none;
+            justify-content: space-between;
+
+        }
+        .btn {
+            padding: 10px 10px;
+            background: #bebebe;
+            text-transform: uppercase;
+            color: #000000;
+            border: 1px solid black;
+            text-decoration: none;
+        }
+
+        @media (max-width: 1280px){
+            .btn_wrapper {
+                display: flex;
+            }
         }
     </style>
 
