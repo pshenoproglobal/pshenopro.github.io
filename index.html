@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,84 +13,86 @@
             crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="canvas_wrapper">
-        <div class="score_wrapper">Score:
-            <span id="score"></span>
-        </div>
-        <canvas id="tetris" width="240" height="400"></canvas>
-        <script src="main.js"></script>
-        <div class="btn_wrapper">
-            <a href="javascript:void(0)" class="btn btn_left" onclick="playerMove(-1)">left</a>
-            <a href="javascript:void(0)" class="btn btn_rotate" onclick="playerRotate(-1)">rotate</a>
-            <a href="javascript:void(0)" class="btn btn_right" onclick="playerMove(1)">right</a>
-        </div>
+<div class="canvas_wrapper">
+    <div class="score_wrapper">Score:
+        <span id="score"></span>
     </div>
+    <canvas id="tetris" width="240" height="400"></canvas>
+    <script src="main.js"></script>
+    <div class="btn_wrapper">
+        <a href="javascript:void(0)" class="btn btn_left" onclick="playerMove(-1)">left</a>
+        <a href="javascript:void(0)" class="btn btn_rotate" onclick="playerRotate(-1)">rotate</a>
+        <a href="javascript:void(0)" class="btn btn_right" onclick="playerMove(1)">right</a>
+    </div>
+    <div class="btn_wrapper">
+        <a href="javascript:void(0)" class="btn" onclick="playerDrop()">drop</a>
+    </div>
+</div>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Press Start 2P', cursive;
-        }
-        body {
-            background: linear-gradient(45deg, rgba(66, 183, 245, 0.8) 0%, rgba(66, 245, 189, 0.4) 100%);
-            color: rgba(0, 0, 0, 0.6);
-            font-family: "Roboto", sans-serif;
-            font-size: 14px;
-            line-height: 1.6em;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            height: 99vh;
-        }
-        canvas {
-            display: block;
-            margin: 0 auto 5px;
-            height: 80vh;
-            width: 100%;
-            border: 3px solid #fff;
-            overflow: hidden;
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Press Start 2P', cursive;
+    }
+    body {
+        background: linear-gradient(45deg, rgba(66, 183, 245, 0.8) 0%, rgba(66, 245, 189, 0.4) 100%);
+        color: rgba(0, 0, 0, 0.6);
+        font-family: "Roboto", sans-serif;
+        font-size: 14px;
+        line-height: 1.6em;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        height: 99vh;
+    }
+    canvas {
+        display: block;
+        margin: 0 auto 5px;
+        height: 80vh;
+        width: 100%;
+        border: 3px solid #fff;
+        overflow: hidden;
+    }
+    .canvas_wrapper {
+        width: 435px;
+        margin: 0 auto;
+        overflow: hidden;
+        position: relative;
+    }
+    .score_wrapper {
+        position: absolute;
+        left: 20px;
+        top: 20px;
+        color: #ffffff;
+    }
+    .btn_wrapper {
+        display: none;
+        justify-content: space-between;
+        margin-bottom: 10px;
+    }
+    .btn {
+        padding: 10px 10px;
+        background: #bebebe;
+        text-transform: uppercase;
+        color: #000000;
+        border: 1px solid black;
+        text-decoration: none;
+    }
+    @media (max-width: 1280px){
+        .btn_wrapper {
+            display: flex;
         }
         .canvas_wrapper {
-            width: 435px;
-            margin: 0 auto;
-            overflow: hidden;
-            position: relative;
+            width: 375px;
         }
-        .score_wrapper {
-            position: absolute;
-            left: 20px;
-            top: 20px;
-            color: #ffffff;
+    }
+    @media (max-width:414px){
+        .canvas_wrapper {
+            width: 375px;
         }
-        .btn_wrapper {
-            display: none;
-            justify-content: space-between;
-
-        }
-        .btn {
-            padding: 10px 10px;
-            background: #bebebe;
-            text-transform: uppercase;
-            color: #000000;
-            border: 1px solid black;
-            text-decoration: none;
-        }
-
-        @media (max-width: 1280px){
-            .btn_wrapper {
-                display: flex;
-            }
-            .canvas_wrapper {
-                width: 375px;
-            }
-        }
-        @media (max-width:414px){
-            .canvas_wrapper {
-                width: 375px;
-            }
-        }
-    </style>
+    }
+</style>
 
 </body>
 </html>
