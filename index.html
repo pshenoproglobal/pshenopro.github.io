@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tetris</title>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+</head>
+<body>
+    <div class="canvas_wrapper">
+        <div class="score_wrapper">Score:
+            <span id="score"></span>
+        </div>
+        <canvas id="tetris" width="240" height="400"></canvas>
+        <script src="main.js"></script>
+    </div>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Press Start 2P', cursive;
+        }
+        body {
+            background: linear-gradient(45deg, rgba(66, 183, 245, 0.8) 0%, rgba(66, 245, 189, 0.4) 100%);
+            color: rgba(0, 0, 0, 0.6);
+            font-family: "Roboto", sans-serif;
+            font-size: 14px;
+            line-height: 1.6em;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            height: 99vh;
+        }
+        canvas {
+            height: 80vh;
+            border: 3px solid #fff;
+            overflow: hidden;
+        }
+        .canvas_wrapper {
+            width: 440px;
+            margin: 0 auto;
+            overflow: hidden;
+            position: relative;
+        }
+        .score_wrapper {
+            position: absolute;
+            left: 20px;
+            top: 20px;
+            color: #ffffff;
+        }
+    </style>
+
+</body>
+</html>
